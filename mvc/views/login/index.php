@@ -1,4 +1,4 @@
-<?php include("templates/header.php");?>
+<?php include("../templates/header.php");?>
 
     <form>
         <div class="form-group">
@@ -12,4 +12,4 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-<?php include("templates/footer.php");?>
+<?php include("../templates/footer.php");?>
