@@ -1,4 +1,4 @@
-<?php include("../templates/header.php");?>
+<?php include("views/templates/header.php");?>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
@@ -29,4 +29,4 @@
         </div>
     </div>
 
-<?php include("../templates/footer.php");?>
+<?php include("views/templates/footer.php");?>

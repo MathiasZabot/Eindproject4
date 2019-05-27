@@ -1,4 +1,4 @@
-<?php include("../templates/header.php");?>
+<?php include("views/templates/header.php");?>
     <form>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Achternaam">
 
@@ -18,4 +18,4 @@
             <option>5</option>
         </select>
     </form>
-<?php include("../templates/footer.php");?>
+<?php include("views/templates/footer.php");?>

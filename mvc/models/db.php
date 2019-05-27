@@ -1,6 +1,6 @@
 <?php
 
-class db extends TinyMVC_Model
+class db
 {
     private $host, $username, $password, $dbname;
 
@@ -50,5 +50,9 @@ class db extends TinyMVC_Model
 
     public function checkLogin($table="gebruikers",$gebruiker_id=1){
         $sql = "SELECT loginstatus FROM".$table." WHERE gebruiker_id =".$gebruiker_id;
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        var_dump($result);
     }
 }
