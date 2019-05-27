@@ -13,7 +13,9 @@ class login_Controller {
         $gebruiker = new gebruiker();
         $results = $gebruiker->checklogin();
         var_dump($results);
+
         if ($username === $results[0]["gebruikersnaam"] && $password === $results[0]["wachtwoord"]){
+            echo "cookie set jumm jumm";
             setcookie("authentication", 1,5000);
         }
     }

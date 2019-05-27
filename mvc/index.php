@@ -20,19 +20,40 @@ require_once ("models/gebruiker.php");
 /**
  * dispatching the world
  */
-$gebruiker = new gebruiker();
 
-if (!isset($_COOKIE["authentication"])){
-        $logincontroller = new login_Controller();
-        $logincontroller->index();
+$logincontroller = new login_Controller();
+$request = isset($_GET["page"]) ? $_GET["page"] : null ;
+
+if($request !== null){
+
+    if($request === "loggedin"){
+        $homecontroller = new home_Controller();
+        $homecontroller->index();
+    }else{
+        // TODO: 404 pagina
+    }
+}else{
+    $logincontroller->index();
+}
+
+/*$gebruiker = new gebruiker();
+
+if (isset($_COOKIE["authentication"])){
+    $homecontroller = new home_Controller();
+    $homecontroller->index();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST["gebruikersnaam"])&& isset($_POST["wachtwoord"])){
             $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
         }
-    }else{
-        $homecontroller = new home_Controller();
-        $homecontroller->index();
-       
-    };
+    }elseif(){
+
+    }
+}
+
+
+    die('geen cookie / geen request');
+*/
 
 
 

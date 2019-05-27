@@ -1,6 +1,6 @@
 <?php include("views/templates/header.php");?>
 
-    <form method="post" action="index.php">
+    <form method="post" action="">
         <div class="form-group">
             <label for="exampleInputEmail1">Gebruikersnaam</label>
             <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam" aria-describedby="emailHelp" placeholder="Enter email">
