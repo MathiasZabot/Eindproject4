@@ -8,6 +8,8 @@ function my_autoloader($class_name){
 spl_autoload_register('my_autoloader');
 
 require_once ("models/db.php");
+require_once ("models/gebruiker.php");
+
 
 /**
  * require_once 'controllers/home_Controller.php';
@@ -18,19 +20,19 @@ require_once ("models/db.php");
 /**
  * dispatching the world
  */
-$db = new db();
-$db->checkLogin();
+$gebruiker = new gebruiker();
 
-/*if (){
-    if ($_GET['login']==='login'){
+$loginStatus = $gebruiker->checkLogin();
+
+
+if ($loginStatus === 0){
         $logincontroller = new login_Controller();
         $logincontroller->index();
     }else{
-        $errorcontroller = new errorController();
-        $errorcontroller->index();
-    }
-}else{
-    $homecontroller = new home_Controller();
-    $homecontroller->index();
-}*/
+        $homecontroller = new home_Controller();
+        $homecontroller->index();
+       
+    };
+
+
 
