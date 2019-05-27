@@ -9,4 +9,12 @@ class login_Controller {
     public function index(){
         include_once 'views/login/index.php';
     }
+    public function authenticate($username,$password){
+        $gebruiker = new gebruiker();
+        $results = $gebruiker->checklogin();
+        var_dump($results);
+        if ($username === $results[0]["gebruikersnaam"] && $password === $results[0]["wachtwoord"]){
+            setcookie("authentication", 1,5000);
+        }
+    }
 }

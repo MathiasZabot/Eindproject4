@@ -48,9 +48,7 @@ class db
         $stmt->execute();
     }
 
-<<<<<<< HEAD
-    
-=======
+
     public function checkLogin($table="gebruikers",$gebruiker_id=1){
         $sql = "SELECT loginstatus FROM ".$table." WHERE gebruiker_id =".$gebruiker_id;
         $stmt = $this->conn->prepare($sql);
@@ -58,5 +56,4 @@ class db
         $result = $stmt->fetchAll();
         var_dump($result);
     }
->>>>>>> b7fd76a58fbbbc17dd14b21a4f85f6a17fb7ab17
 }

@@ -22,12 +22,12 @@ require_once ("models/gebruiker.php");
  */
 $gebruiker = new gebruiker();
 
-$loginStatus = $gebruiker->checkLogin();
-
-
-if ($loginStatus === 0){
+if (!isset($_COOKIE["authentication"])){
         $logincontroller = new login_Controller();
         $logincontroller->index();
+        if (isset($_POST["gebruikersnaam"])&& isset($_POST["wachtwoord"])){
+            $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
+        }
     }else{
         $homecontroller = new home_Controller();
         $homecontroller->index();
