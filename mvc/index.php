@@ -27,6 +27,7 @@ $request = isset($_GET["page"]) ? $_GET["page"] : null ;
 if($request !== null){
 
     if($request === "loggedin"){
+        $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
         $homecontroller = new home_Controller();
         $homecontroller->index();
     }else{

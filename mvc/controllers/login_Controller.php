@@ -17,6 +17,7 @@ class login_Controller {
         if ($username === $results[0]["gebruikersnaam"] && $password === $results[0]["wachtwoord"]){
             echo "cookie set jumm jumm";
             setcookie("authentication", 1,5000);
+            header("http://localhost:63342/htdocs/repository/personal/Eindproject4/mvc/index.php?page=loggedin");
         }
     }
 }
