@@ -25,11 +25,32 @@ $logincontroller = new login_Controller();
 $request = isset($_GET["page"]) ? $_GET["page"] : null ;
 
 if($request !== null){
+    switch ($request){
+        case "loginattempt":
+            $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
+            break;
+        case "loggedin":
+            $homecontroller = new home_Controller();
+            $homecontroller->index();
+            break;
+        case "create":
+            $createController = new create_Controller();
+            $createController->index();
+            break;
+        case "update":
+            $updateController = new update_Controller();
+            $updateController->index();
+            break;
+        case "delete":
+            $deleteController = new create_Controller();
+            break;
+        default:
+            $logincontroller->index();
+    }
 
     if($request === "loggedin"){
-        $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
-        $homecontroller = new home_Controller();
-        $homecontroller->index();
+
+
     }else{
         // TODO: 404 pagina
     }

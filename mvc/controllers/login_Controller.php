@@ -12,7 +12,6 @@ class login_Controller {
     public function authenticate($username,$password){
         $gebruiker = new gebruiker();
         $results = $gebruiker->checklogin();
-        var_dump($results);
 
         if ($username === $results[0]["gebruikersnaam"] && $password === $results[0]["wachtwoord"]){
             echo "cookie set jumm jumm";
