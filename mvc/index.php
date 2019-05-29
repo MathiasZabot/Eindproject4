@@ -4,31 +4,25 @@
 function my_autoloader($class_name){
     require_once("controllers/$class_name.php");
 }
+function my_autoloader2($class_name){
+    require_once("models/$class_name.php");
+}
 
 spl_autoload_register('my_autoloader');
+spl_autoload_register('my_autoloader2');
+
 
 require_once ("models/db.php");
 require_once ("models/gebruiker.php");
 
-
-/**
- * require_once 'controllers/home_Controller.php';
-*require_once 'controllers/errorController.php';
-*require_once 'controllers/contact_Controller.php';
-*/
-
-/**
- * dispatching the world
- */
-
+//setcookie("authentication",null,-1,"/");
 $logincontroller = new login_Controller();
 $request = isset($_GET["page"]) ? $_GET["page"] : null ;
 
-if($request !== null){
+if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
+    $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
+}else if($request !== null && isset($_COOKIE["authentication"])){
     switch ($request){
-        case "loginattempt":
-            $logincontroller->authenticate($_POST["gebruikersnaam"],$_POST["wachtwoord"]);
-            break;
         case "loggedin":
             $homecontroller = new home_Controller();
             $homecontroller->index();
@@ -46,13 +40,6 @@ if($request !== null){
             break;
         default:
             $logincontroller->index();
-    }
-
-    if($request === "loggedin"){
-
-
-    }else{
-        // TODO: 404 pagina
     }
 }else{
     $logincontroller->index();
