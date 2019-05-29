@@ -21,30 +21,28 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Achternaam</th>
+                    <th scope="col">Voornaam</th>
+                    <th scope="col">Tel nr</th>
+                    <th scope="col">GSM nr</th>
+                    <th scope="col">Email</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+                    <?php if($result->num_rows > 0): ?>
+                        <?php while($row = $result->fetch_assoc()): ?>
+                            <tr>
+                                <th scope="row"><?php echo $row['contact_id']; ?></th>
+                                <td><?php echo $row['achternaam']; ?></td>
+                                <td><?php echo $row['voornaam']; ?></td>
+                                <td><?php echo $row['telnr']; ?></td>
+                                <td><?php echo $row['gsmnr']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><a href="index.php?id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Update</a></td>
+                                <td><a href="index.php?id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Delete</a></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

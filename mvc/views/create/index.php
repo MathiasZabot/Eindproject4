@@ -17,5 +17,6 @@
             <option>4</option>
             <option>5</option>
         </select>
+        <input type="submit">
     </form>
 <?php include("views/templates/footer.php");?>
