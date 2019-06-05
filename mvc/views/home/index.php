@@ -30,7 +30,8 @@
                 </thead>
                 <tbody>
 
-                    <?php if($numOfRows > 0): ?>
+                    <?php echo $numOfRows; if($numOfRows > 0): ?>
+
                         <?php foreach($result as $row) : ?>
                             <tr>
                                 <th scope="row"><?php echo $row['contact_id']; ?></th>

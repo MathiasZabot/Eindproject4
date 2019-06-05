@@ -7,6 +7,8 @@
  */
 class update_Controller {
     public function index(){
+        $db = new db();
+        $result = $db->getDataByID('contacten',$_GET['id']);
         include_once 'views/update/index.php';
     }
 }

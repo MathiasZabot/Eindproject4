@@ -4,12 +4,12 @@
 function my_autoloader($class_name){
     require_once("controllers/$class_name.php");
 }
-function my_autoloader2($class_name){
+/*function my_autoloader2($class_name){
     require_once("models/$class_name.php");
-}
+}*/
 
 spl_autoload_register('my_autoloader');
-spl_autoload_register('my_autoloader2');
+/*spl_autoload_register('my_autoloader2');*/
 
 
 require_once ("models/db.php");
@@ -35,8 +35,13 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $updateController = new update_Controller();
             $updateController->index();
             break;
+        case "update_done":
+            $homecontroller = new home_Controller();
+            $homecontroller->update();
+            $homecontroller->index();
         case "delete":
             $deleteController = new create_Controller();
+            $deleteController->index();
             break;
         default:
             setcookie("authentication",null,-1,"/");

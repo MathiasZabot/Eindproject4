@@ -7,5 +7,11 @@
  */
 class delete_Controller
 {
-    
+    public function index(){
+        $db = new db();
+        $db->deleteDataById('contacten',$_GET['id']);
+
+        include_once 'views/home/index.php';
+    }
+
 }

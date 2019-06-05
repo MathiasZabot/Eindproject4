@@ -9,7 +9,7 @@
             <label for="exampleInputPassword1">Paswoord</label>
             <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Inloggen</button>
     </form>
 
 <?php include("views/templates/footer.php");?>
