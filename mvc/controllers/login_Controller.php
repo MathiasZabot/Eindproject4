@@ -16,6 +16,8 @@ class login_Controller {
         if ($username === $results[0]["gebruikersnaam"] && $password === $results[0]["wachtwoord"]){
             setcookie("authentication", 1, time() + (86400 * 30), "/");
             header("location: index.php?page=loggedin");
+        }else{
+            die("something went wrong");
         }
     }
 }
