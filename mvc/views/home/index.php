@@ -31,7 +31,7 @@
                 <tbody>
 
                     <?php if($numOfRows > 0): ?>
-                        <?php while($row = $result->fetch_assoc()): ?>
+                        <?php foreach($result as $row) : ?>
                             <tr>
                                 <th scope="row"><?php echo $row['contact_id']; ?></th>
                                 <td><?php echo $row['achternaam']; ?></td>
@@ -39,10 +39,10 @@
                                 <td><?php echo $row['telnr']; ?></td>
                                 <td><?php echo $row['gsmnr']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td><a href="index.php?page=update&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Edit</a></td>
-                                <td><a href="index.php?page=delete&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Delete</a></td>
+                                <td><a href="index.php?page=update&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
+                                <td><a href="index.php?page=delete&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
                             </tr>
-                        <?php endwhile; ?>
+<?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>
