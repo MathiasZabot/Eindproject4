@@ -39,6 +39,7 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $deleteController = new create_Controller();
             break;
         default:
+            setcookie("authentication",null,-1,"/");
             $logincontroller->index();
     }
 }else{
