@@ -21,30 +21,29 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">achternaam</th>
+                    <th scope="col">voornaam</th>
+                    <th scope="col">telnr</th>
+                    <th scope="col">gsmnr</th>
+                    <th scope="col">email</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+
+                    <?php if($numOfRows > 0): ?>
+                        <?php while($row = $result->fetch_assoc()): ?>
+                            <tr>
+                                <th scope="row"><?php echo $row['contact_id']; ?></th>
+                                <td><?php echo $row['achternaam']; ?></td>
+                                <td><?php echo $row['voornaam']; ?></td>
+                                <td><?php echo $row['telnr']; ?></td>
+                                <td><?php echo $row['gsmnr']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><a href="index.php?page=update&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Edit</a></td>
+                                <td><a href="index.php?page=delete&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Delete</a></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

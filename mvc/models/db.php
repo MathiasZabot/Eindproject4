@@ -56,4 +56,9 @@ class db
         $result = $stmt->fetchAll();
         var_dump($result);
     }
+
+    public function getNumOfRows()
+    {
+        return $this->numOfRows;
+    }
 }
