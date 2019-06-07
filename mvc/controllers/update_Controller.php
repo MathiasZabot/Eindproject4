@@ -9,6 +9,7 @@ class update_Controller {
     public function index(){
         $db = new db();
         $result = $db->getCombinedData($_GET['id']);
+        $result2 = $db->getAllData('bedrijven');
         include_once 'views/update/index.php';
     }
 }

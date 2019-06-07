@@ -49,7 +49,8 @@ class db
 
     
     public function getCombinedData($contact_id){
-        $stmt = $this->conn->prepare("SELECT * FROM contacten WHERE contact_id = '".$contact_id."' INNER JOIN bedrijven ON contacten.bedrijf_id = bedrijven.bedrijf_id");
+        $stmt = $this->conn->prepare("SELECT * FROM contacten INNER JOIN bedrijven ON contacten.bedrijf_id = bedrijven.bedrijf_id
+        WHERE contact_id = '".$contact_id."'");
 
         //die("SELECT * FROM ".$table." WHERE contact_id = '".$contact_id."'");
         $stmt->execute();

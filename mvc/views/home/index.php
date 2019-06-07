@@ -43,7 +43,7 @@
                                 <td><a href="index.php?page=update&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
                                 <td><a href="index.php?page=delete&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
                             </tr>
-<?php endforeach; ?>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>
