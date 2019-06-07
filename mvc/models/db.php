@@ -38,6 +38,7 @@ class db
 
     public function getDataByID($table,$contact_id){
         $stmt = $this->conn->prepare("SELECT * FROM ".$table." WHERE contact_id = '".$contact_id."'");
+
         //die("SELECT * FROM ".$table." WHERE contact_id = '".$contact_id."'");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -45,6 +46,19 @@ class db
         $this->numOfRows = sizeof($result);
         return $result;
     }
+
+    
+    public function getCombinedData($contact_id){
+        $stmt = $this->conn->prepare("SELECT * FROM contacten WHERE contact_id = '".$contact_id."' INNER JOIN bedrijven ON contacten.bedrijf_id = bedrijven.bedrijf_id");
+
+        //die("SELECT * FROM ".$table." WHERE contact_id = '".$contact_id."'");
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+        $this->numOfRows = sizeof($result);
+        return $result;
+    }
+
 
     public function updateDataById($table, $contact_id, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
         $sql = "UPDATE ".$table." SET achternaam = '".$achternaam."', voornaam = '".$voornaam."', telnr = '".$telnr."',

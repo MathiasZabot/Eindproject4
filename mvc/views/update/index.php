@@ -4,15 +4,15 @@
 
         <input type="email" class="form-control" id="exampleFormControlInput1" name="Achternaam" placeholder="<?php echo($result[0]['achternaam'])?>">
 
-        <input type="email" class="form-control" id="exampleFormControlInput1" name="Voornaam" placeholder="Voornaam">
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="Voornaam" placeholder="<?php echo($result[0]['voornaam'])?>">
 
-        <input type="email" class="form-control" id="exampleFormControlInput1" name="Telnr" placeholder="Telnr.">
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="Telnr" placeholder="<?php echo($result[0]['telnr'])?>.">
 
-        <input type="email" class="form-control" id="exampleFormControlInput1" name="GSM" placeholder="GSM">
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="GSM" placeholder="<?php echo($result[0]['gsmnr'])?>">
 
-        <input type="email" class="form-control" id="exampleFormControlInput1" name="Email" placeholder="Email">
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="Email" placeholder="<?php echo($result[0]['email'])?>">
 
-        <select class="form-control" id="exampleFormControlSelect1" >
+        <select class="form-control" id="exampleFormControlSelect1" placeholder="<?php echo($result[0]['bedrijf'])?>" >
             <option>Bedrijf</option>
             <option>2</option>
             <option>3</option>
