@@ -1,6 +1,6 @@
 <?php include("views/templates/header.php");?>
     <form method="post" action="index.php?page=update_done">
-        <input type="hidden" value="<?php $_GET['id'] ?>" name="contact_id">
+        <input type="hidden" value="<?php echo $_GET['id']; ?>" name="contact_id">
 
         <input type="text" class="form-control" id="exampleFormControlInput1" name="Achternaam" value="<?php echo($result[0]['achternaam'])?>">
 
@@ -12,7 +12,7 @@
 
         <input type="email" class="form-control" id="exampleFormControlInput1" name="Email" value="<?php echo($result[0]['email'])?>">
 
-        <select class="form-control" id="exampleFormControlSelect1" >
+        <select class="form-control" id="exampleFormControlSelect1" name="Bedrijf_id">
         <?php foreach($result2 as $row) : ?>
 
             <option

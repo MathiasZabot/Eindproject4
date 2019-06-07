@@ -16,5 +16,6 @@ class update_Controller {
     public function update(){
         $db = new db();
         $db->updateDataById('contacten',$_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+
     }
 }
