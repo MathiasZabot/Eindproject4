@@ -12,4 +12,9 @@ class update_Controller {
         $result2 = $db->getAllData('bedrijven');
         include_once 'views/update/index.php';
     }
+
+    public function update(){
+        $db = new db();
+        $result = $db->updateDataById('contacten',$_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+    }
 }

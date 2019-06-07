@@ -36,15 +36,20 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $updateController->index();
             break;
         case "update_done":
+            $updateController = new update_Controller();
             $homecontroller = new home_Controller();
-            $homecontroller->update();
+            $updateController->update();
             $homecontroller->index();
+            break;
         case "delete":
-            $deleteController = new create_Controller();
-            $deleteController->index();
+            $deleteController = new delete_Controller();
+            $homecontroller = new home_Controller();
+            $deleteController->delete();
+            $homecontroller->index();
             break;
         default:
             setcookie("authentication",null,-1,"/");
+            echo "Something went wrong, please try again";
             $logincontroller->index();
     }
 }else{
