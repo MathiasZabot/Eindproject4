@@ -15,11 +15,12 @@
         <select class="form-control" id="exampleFormControlSelect1" >
         <?php foreach($result2 as $row) : ?>
 
-            <?php if($result[0]['bedrijf_id'] === $row['bedrijf_id']) :?>
-            <option selected="selected"><?php echo $row['naam']; ?></option>
-            <?php else :?>
-            <option><?php echo $row['naam']; ?></option>
-            <?php endif;?>
+            <option
+                <?php if($result[0]['bedrijf_id'] === $row['bedrijf_id']) :?>
+                    selected="selected"
+                <?php endif;?>
+            ><?php echo $row['naam']; ?>
+            </option>
 
         <?php endforeach; ?>
         </select>
