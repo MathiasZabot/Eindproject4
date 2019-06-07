@@ -19,7 +19,7 @@
                 <?php if($result[0]['bedrijf_id'] === $row['bedrijf_id']) :?>
                     selected="selected"
                 <?php endif;?>
-            ><?php echo $row['naam']; ?>
+            value="<?php echo $row['bedrijf_id'];?>"><?php echo $row['naam']; ?>
             </option>
 
         <?php endforeach; ?>

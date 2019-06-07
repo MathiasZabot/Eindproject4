@@ -33,12 +33,13 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             break;
         case "update":
             $updateController = new update_Controller();
+            echo serialize($_POST);
             $updateController->index();
             break;
         case "update_done":
             $updateController = new update_Controller();
             $homecontroller = new home_Controller();
-            $updateController->update();
+            $updateController->update('contacten',$_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
             $homecontroller->index();
             break;
         case "delete":
