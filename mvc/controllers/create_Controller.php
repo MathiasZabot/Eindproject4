@@ -10,4 +10,9 @@ class create_Controller
     public function index(){
         include_once 'views/create/index.php';
     }
+    public function create(){
+        new db;
+        $db->createData('contacten',$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+
+    }
 }

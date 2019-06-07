@@ -59,7 +59,13 @@ class db
         $this->numOfRows = sizeof($result);
         return $result;
     }
-
+    
+    public function createData($table, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
+        $sql = "INSERT INTO ".$table." VALUES ('".$achternaam."', '".$voornaam."', '".$telnr."', 
+        '".$gsmnr."', '".$email."','".$bedrijf_id."')";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+    }
 
     public function updateDataById($table, $contact_id, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
         $sql = "UPDATE ".$table." SET achternaam = '".$achternaam."', voornaam = '".$voornaam."', telnr = '".$telnr."',
