@@ -47,6 +47,8 @@
                     <?php endif; ?>
                 </tbody>
             </table>
+            <a href="index.php?page=create&table=contacten" class="btn btn-success" type="button">Voeg een nieuwe klant toe</a>
+
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <form>
@@ -78,6 +80,7 @@
                 <?php endif; ?>
                 </tbody>
             </table>
+            <a href="index.php?page=create&table=bedrijven" class="btn btn-success" type="button">Voeg een nieuw bedrijf toe</a>
         </div>
     </div>
 
