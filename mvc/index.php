@@ -28,35 +28,31 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $homecontroller->index();
             break;
         case "createContact":
-            $updateController = new create_Controller();
-            echo serialize($_POST);
-            $updateController->index();
+            $createController = new create_Controller();
+            $createController->index();
             break;
         case "createBedrijf":
-            $updateController = new create_Controller();
-            echo serialize($_POST);
-            $updateController->indexbedrijf();
+            $createController = new create_Controller();
+            $createController->indexbedrijf();
             break;
         case "create_done_contact":
-            $updateController = new create_Controller();
+            $createController = new create_Controller();
             $homecontroller = new home_Controller();
-            $updateController->createContact($_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+            $createController->createContact($_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
             $homecontroller->index();
             break;
         case "create_done_bedrijf":
-            $updateController = new create_Controller();
+            $createController = new create_Controller();
             $homecontroller = new home_Controller();
-            $updateController->createBedrijf($_POST['naam']);
+            $createController->createBedrijf($_POST['naam']);
             $homecontroller->index();
             break;
         case "updateContact":
             $updateController = new update_Controller();
-            echo serialize($_POST);
             $updateController->index();
             break;
         case "updateBedrijf":
             $updateController = new update_Controller();
-            echo serialize($_POST);
             $updateController->indexbedrijf();
             break;
         case "update_done_contact":

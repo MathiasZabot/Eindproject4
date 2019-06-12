@@ -8,6 +8,8 @@
 class create_Controller
 {
     public function index(){
+        $db = new db();
+        $result2 = $db->getAllData('bedrijven');
         include_once 'views/create/index.php';
     }
   

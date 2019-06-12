@@ -60,17 +60,17 @@ class db
         return $result;
     }
     
-    public function createContactData($table, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
+    public function createContactData($achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
 
-        $sql = "INSERT INTO ".$table." VALUES ('".$achternaam."', '".$voornaam."', '".$telnr."', 
+        $sql = "INSERT INTO contacten VALUES ('".$achternaam."', '".$voornaam."', '".$telnr."', 
         '".$gsmnr."', '".$email."','".$bedrijf_id."')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }
 
-    public function createBedrijfData($table,$naam){
+    public function createBedrijfData($naam){
 
-        $sql = "INSERT INTO ".$table." VALUES ('".$naam."')";
+        $sql = "INSERT INTO bedrijven VALUES ('".$naam."')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }
