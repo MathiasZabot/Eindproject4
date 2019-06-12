@@ -13,12 +13,19 @@ class update_Controller {
         $result2 = $db->getAllData('bedrijven');
         include_once 'views/update/index.php';
     }
-
-    public function update($table,$id,$achternaam=null,$voornaam=null,$telnr=null,$gsm=null,$email=null,$bedrijf_id=null){
+    public function indexbedrijf(){
         $db = new db();
-        if ($table === 'contacten'){
-            $db->updateDataById($table,$id,$achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id);
-        }elseif ($table === 'bedrijven'){
-        $db->updateDataById($table,$id,$naam);
+        $result = $db->getAllData('bedrijven');
+        include_once 'views/updateBedrijf/index.php';
+    }
+
+    public function updateContact($id,$achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id){
+        $db = new db();
+        $db->updateContactDataById($id,$achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id);
+    }
+
+    public function updateBedrijf($id,$naam){
+        $db = new db();
+        $db->updateBedrijfDataById($id,$naam);
     }
 }

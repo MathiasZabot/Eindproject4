@@ -67,13 +67,14 @@ class db
         $stmt->execute();
     }
 
-    public function updateDataById($table=null, $id=null, $achternaam=null, $voornaam=null, $telnr=null, $gsmnr=null, $email=null, $bedrijf_id=null){
-        if ($table === 'contacten'){
-            $sql = "UPDATE ".$table." SET achternaam = '".$achternaam."', voornaam = '".$voornaam."', telnr = '".$telnr."',
-            gsmnr = '".$gsmnr."', email = '".$email."', bedrijf_id = '".$bedrijf_id."' WHERE contact_id = '".$id."'";  
-        }elseif ($table === 'bedrijven'){
-            $sql = "UPDATE ".$table." SET naam = '".$naam."' WHERE bedrijf_id = '".$id."'";
-        }
+    public function updateContactDataById($id, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
+        $sql = "UPDATE contacten SET achternaam = '".$achternaam."', voornaam = '".$voornaam."', telnr = '".$telnr."',
+        gsmnr = '".$gsmnr."', email = '".$email."', bedrijf_id = '".$bedrijf_id."' WHERE contact_id = '".$id."'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+    }
+    public function updateBedrijfDataById($id, $naam){
+        $sql = "UPDATE bedrijven SET naam = '".$naam."' WHERE bedrijf_id = '".$id."'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }

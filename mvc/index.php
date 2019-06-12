@@ -31,15 +31,26 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $createController = new create_Controller();
             $createController->index();
             break;
-        case "update":
+        case "updateContact":
             $updateController = new update_Controller();
             echo serialize($_POST);
             $updateController->index();
             break;
-        case "update_done":
+        case "updateBedrijf":
+            $updateController = new update_Controller();
+            echo serialize($_POST);
+            $updateController->indexbedrijf();
+            break;
+        case "update_done_contact":
             $updateController = new update_Controller();
             $homecontroller = new home_Controller();
-            $updateController->update($_GET['table'],$_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+            $updateController->updateContact($_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+            $homecontroller->index();
+            break;
+        case "update_done_bedrijf":
+            $updateController = new update_Controller();
+            $homecontroller = new home_Controller();
+            $updateController->updateBedrijf($_POST['bedrijf_id'],$_POST['naam']);
             $homecontroller->index();
             break;
         case "delete":
@@ -49,11 +60,12 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $homecontroller->index();
             break;
         default:
-            setcookie("authentication",null,-1,"/");
-            echo "Something went wrong, please try again";
-            $logincontroller->index();
+            $homecontroller = new home_Controller();
+            $homecontroller->index();
+            break;
     }
 }else{
+    setcookie("authentication",null,-1,"/");
     $logincontroller->index();
 }
 

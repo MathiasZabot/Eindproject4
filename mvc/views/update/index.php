@@ -1,5 +1,5 @@
 <?php include("views/templates/header.php");?>
-    <form method="post" action="index.php?page=update_done">
+    <form method="post" action="index.php?page=update_done_contact">
         <input type="hidden" value="<?php echo $_GET['id']; ?>" name="contact_id">
 
         <input type="text" class="form-control" id="exampleFormControlInput1" name="Achternaam" value="<?php echo($result[0]['achternaam'])?>">

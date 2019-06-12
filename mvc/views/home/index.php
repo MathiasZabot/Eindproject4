@@ -40,7 +40,7 @@
                                 <td><?php echo $row['telnr']; ?></td>
                                 <td><?php echo $row['gsmnr']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td><a href="index.php?page=update&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
+                                <td><a href="index.php?page=updateContact&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
                                 <td><a href="index.php?page=delete&table=contacten&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
                             </tr>
                         <?php endforeach; ?>
@@ -71,7 +71,7 @@
                         <tr>
                             <th scope="row"><?php echo $row['bedrijf_id']; ?></th>
                             <td><?php echo $row['naam']; ?></td>
-                            <td><a href="index.php?page=update&table=bedrijven&id=<?php echo $row['bedrijf_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
+                            <td><a href="index.php?page=updateBedrijf&id=<?php echo $row['bedrijf_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
                             <td><a href="index.php?page=delete&table=bedrijven&id=<?php echo $row['bedrijf_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
                         </tr>
                     <?php endforeach; ?>
