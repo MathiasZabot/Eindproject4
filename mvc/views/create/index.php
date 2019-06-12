@@ -1,7 +1,7 @@
 <?php include("views/templates/header.php");
     
     if ($_GET['table'] === 'contacten'){?>
-    <form method="post" action="index.php?page=create&table=contacten">
+    <form method="post" action="index.php?page=create_done_contact&table=contacten">
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Achternaam">
 
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Voornaam">
@@ -24,7 +24,7 @@
    
     
     <?php }elseif ($_GET['table'] === 'bedrijven') { ?>
-        <form method="post" action="index.php?page=create&table=bedrijven">
+        <form method="post" action="index.php?page=create_done_bedrijf&table=bedrijven">
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Bedrijfsnaam">
         <input type="submit">
         </form>
