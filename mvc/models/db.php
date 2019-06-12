@@ -60,13 +60,21 @@ class db
         return $result;
     }
     
-    public function createData($table, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
+    public function createContactData($table, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
+
         $sql = "INSERT INTO ".$table." VALUES ('".$achternaam."', '".$voornaam."', '".$telnr."', 
         '".$gsmnr."', '".$email."','".$bedrijf_id."')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
     }
 
+    public function createBedrijfData($table,$naam){
+
+        $sql = "INSERT INTO ".$table." VALUES ('".$naam."')";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+    }
+    
     public function updateContactDataById($id, $achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
         $sql = "UPDATE contacten SET achternaam = '".$achternaam."', voornaam = '".$voornaam."', telnr = '".$telnr."',
         gsmnr = '".$gsmnr."', email = '".$email."', bedrijf_id = '".$bedrijf_id."' WHERE contact_id = '".$id."'";
