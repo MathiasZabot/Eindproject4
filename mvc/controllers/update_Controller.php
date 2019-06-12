@@ -14,9 +14,11 @@ class update_Controller {
         include_once 'views/update/index.php';
     }
 
-    public function update($table,$contact_id,$achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id){
+    public function update($table,$id,$achternaam=null,$voornaam=null,$telnr=null,$gsm=null,$email=null,$bedrijf_id=null){
         $db = new db();
-        $db->updateDataById($table,$contact_id,$achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id);
-
+        if ($table === 'contacten'){
+            $db->updateDataById($table,$id,$achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id);
+        }elseif ($table === 'bedrijven'){
+        $db->updateDataById($table,$id,$naam);
     }
 }
