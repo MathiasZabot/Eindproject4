@@ -74,8 +74,12 @@ class db
         $stmt->execute();
     }
 
-    public function deleteDataById($table=null, $contact_id=null){
-        $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE contact_id=".$contact_id);
+    public function deleteDataById($table=null, $id=null){
+        if ($table === 'contacten'){
+            $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE contact_id=".$id);
+        }elseif ($table === 'bedrijven'){
+            $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE bedrijf_id=".$id);
+        }
         $stmt->execute();
     }
 

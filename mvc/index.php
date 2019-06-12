@@ -45,7 +45,7 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
         case "delete":
             $deleteController = new delete_Controller();
             $homecontroller = new home_Controller();
-            $deleteController->delete();
+            $deleteController->delete($_GET['table']);
             $homecontroller->index();
             break;
         default:

@@ -7,9 +7,9 @@
  */
 class delete_Controller
 {
-    public function delete(){
+    public function delete($table){
         $db = new db();
-        $db->deleteDataById('contacten',$_GET['id']);
+        $db->deleteDataById($table,$_GET['id']);
     }
 
 }
