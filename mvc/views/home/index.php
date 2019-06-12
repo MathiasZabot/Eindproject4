@@ -71,8 +71,8 @@
                         <tr>
                             <th scope="row"><?php echo $row['bedrijf_id']; ?></th>
                             <td><?php echo $row['naam']; ?></td>
-                            <td><a href="index.php?page=update&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
-                            <td><a href="index.php?page=delete&table=bedrijven&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
+                            <td><a href="index.php?page=update&table=bedrijven&id=<?php echo $row['bedrijf_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
+                            <td><a href="index.php?page=delete&table=bedrijven&id=<?php echo $row['bedrijf_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>

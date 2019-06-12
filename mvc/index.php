@@ -39,7 +39,7 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
         case "update_done":
             $updateController = new update_Controller();
             $homecontroller = new home_Controller();
-            $updateController->update('contacten',$_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
+            $updateController->update($_GET['table'],$_POST['contact_id'],$_POST['Achternaam'],$_POST['Voornaam'],$_POST['Telnr'],$_POST['GSM'],$_POST['Email'],$_POST['Bedrijf_id']);
             $homecontroller->index();
             break;
         case "delete":
