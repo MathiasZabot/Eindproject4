@@ -1,7 +1,7 @@
 # Eindproject
 
 ## Inhoudsopgaven
-Planning
+#Planning
 Interne Rollenverdeling
 Beschrijving van het project
   *Definitie/afbakening/scope
