@@ -2,8 +2,8 @@
 
 ## Inhoudsopgaven
 [Planning](#planning)  
-[Interne Rollenverdeling](#Interne Rollenverdeling)  
-[Beschrijving van het project](#Beschrijving van het project)
+[Interne Rollenverdeling](#Interne-Rollenverdeling)  
+[Beschrijving van het project](#Beschrijving-van-het-project)
   #*Definitie/afbakening/scope
   #*Database-structuur
   #*Mockups Wireframe
