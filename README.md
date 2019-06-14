@@ -1,12 +1,9 @@
 # Eindproject
 
 ## Inhoudsopgaven
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip..
-#Planning
-Interne Rollenverdeling
-Beschrijving van het project
+[Planning](#planning)  
+[Interne Rollenverdeling](#Interne Rollenverdeling)  
+[Beschrijving van het project](#Beschrijving van het project)
   *Definitie/afbakening/scope
   *Database-structuur
   *Mockups Wireframe
