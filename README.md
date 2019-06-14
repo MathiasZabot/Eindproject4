@@ -1,6 +1,9 @@
 # Eindproject
 
 ## Inhoudsopgaven
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip..
 #Planning
 Interne Rollenverdeling
 Beschrijving van het project
