@@ -4,9 +4,12 @@
 [Planning](#planning)  
 [Interne Rollenverdeling](#Interne-Rollenverdeling)  
 [Beschrijving van het project](#Beschrijving-van-het-project)
-  #*Definitie/afbakening/scope
-  #*Database-structuur
-  #*Mockups Wireframe
+  #
+  *Definitie/afbakening/scope
+  #
+  *Database-structuur
+  #
+  *Mockups Wireframe
 ## Planning
 
 Na het krijgen van de opdracht, iedere les (woensdag- en vrijdagavond) eraan werken.
