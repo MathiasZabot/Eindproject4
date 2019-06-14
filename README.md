@@ -22,7 +22,7 @@ Tijdens de les, werken we samen aan het eindproject.
 
   * Definitie/afbakening/scope
   #
-    Website met een overzicht van de klanten en de bedrijven gelinkt aan de klanten.
+    Website met een overzicht van de klanten en de bedrijven gelinkt aan deze klanten.
   #
     Zodat iemand die op de baan is, via deze weg een klant kan opzoeken als hij/zij deze wil contacteren.
   * [Database-structuur](https://dbdiagram.io/d)
