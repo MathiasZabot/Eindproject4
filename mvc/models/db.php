@@ -62,7 +62,7 @@ class db
     
     public function createContactData($achternaam, $voornaam, $telnr, $gsmnr, $email, $bedrijf_id){
 
-        $sql = "INSERT INTO contacten VALUES ('".$achternaam."', '".$voornaam."', '".$telnr."', 
+        $sql = "INSERT INTO contacten (achternaam,voornaam,telnr,gsmnr,email,bedrijf_id) VALUES ('".$achternaam."', '".$voornaam."', '".$telnr."', 
         '".$gsmnr."', '".$email."','".$bedrijf_id."')";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();

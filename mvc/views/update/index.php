@@ -6,9 +6,9 @@
 
         <input type="text" class="form-control" id="exampleFormControlInput1" name="Voornaam" value="<?php echo($result[0]['voornaam'])?>">
 
-        <input type="tel" pattern="[0-9]{3}-[0-9]{6}" class="form-control" id="exampleFormControlInput1" name="Telnr" value="<?php echo($result[0]['telnr'])?>.">
+        <input type="tel" class="form-control" id="exampleFormControlInput1" name="Telnr" value="<?php echo($result[0]['telnr'])?>.">
 
-        <input type="tel" pattern="[0-9]{4}-[0-9]{6}" class="form-control" id="exampleFormControlInput1" name="GSM" value="<?php echo($result[0]['gsmnr'])?>">
+        <input type="tel" class="form-control" id="exampleFormControlInput1" name="GSM" value="<?php echo($result[0]['gsmnr'])?>">
 
         <input type="email" class="form-control" id="exampleFormControlInput1" name="Email" value="<?php echo($result[0]['email'])?>">
 
