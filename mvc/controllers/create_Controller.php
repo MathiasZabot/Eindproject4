@@ -16,7 +16,7 @@ class create_Controller
     public function indexbedrijf(){
         $db = new db();
         $result = $db->getAllData('bedrijven');
-        include_once 'views/updateBedrijf/index.php';
+        include_once 'views/createBedrijf/index.php';
     }
 
     public function createContact($achternaam,$voornaam,$telnr,$gsm,$email,$bedrijf_id){
