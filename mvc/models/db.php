@@ -28,7 +28,11 @@ class db
 
     }
     public function getAllData($table){
-        $stmt = $this->conn->prepare("SELECT * FROM ".$table);
+        if ($table==="contacten"){
+            $stmt = $this->conn->prepare("SELECT * FROM ".$table." INNER JOIN bedrijven ON contacten.bedrijf_id = bedrijven.bedrijf_id");
+        }else{
+            $stmt = $this->conn->prepare("SELECT * FROM ".$table);
+        }
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll();

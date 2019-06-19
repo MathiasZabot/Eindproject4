@@ -13,19 +13,20 @@
             <form>
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Zoeken...">
+                        <input type="text" class="form-control" id = "searchInput" " placeholder="Zoeken...">
                     </div>
                 </div>
             </form>
-            <table class="table">
+            <table class="table" id="mainTable">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">achternaam</th>
-                    <th scope="col">voornaam</th>
-                    <th scope="col">telnr</th>
-                    <th scope="col">gsmnr</th>
-                    <th scope="col">email</th>
+                        <th scope="col">#</th>
+                        <th scope="col">achternaam</th>
+                        <th scope="col">voornaam</th>
+                        <th scope="col">telnr</th>
+                        <th scope="col">gsmnr</th>
+                        <th scope="col">email</th>
+                        <th scope="col">bedrijf</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,7 @@
                                 <td><?php echo $row['telnr']; ?></td>
                                 <td><?php echo $row['gsmnr']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['naam']; ?></td>
                                 <td><a href="index.php?page=updateContact&id=<?php echo $row['contact_id']; ?>" class="btn btn-success" type="button">Aanpassen</a></td>
                                 <td><a href="index.php?page=delete&table=contacten&id=<?php echo $row['contact_id']; ?>" class="btn btn-danger" type="button">Verwijderen</a></td>
                             </tr>
@@ -54,11 +56,11 @@
             <form>
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Zoeken...">
+                        <input type="text" class="form-control" id="searchInputB" placeholder="Zoeken...">
                     </div>
                 </div>
             </form>
-            <table class="table">
+            <table class="table" id="mainTableB">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -83,5 +85,48 @@
             <a href="index.php?page=createBedrijf&table=bedrijven" class="btn btn-success" type="button">Voeg een nieuw bedrijf toe</a>
         </div>
     </div>
+
+    <script>
+        function filterTable(event) {
+            var filter = event.target.value.toUpperCase();
+            var rows = document.querySelector("#mainTable tbody").rows;
+
+            for (var i = 0; i < rows.length; i++) {
+                var firstCol = rows[i].cells[0].textContent.toUpperCase();
+                var secondCol = rows[i].cells[1].textContent.toUpperCase();
+                var thirdCol = rows[i].cells[2].textContent.toUpperCase();
+                var fourthCol = rows[i].cells[3].textContent.toUpperCase();
+                var fifthCol = rows[i].cells[4].textContent.toUpperCase();
+                var sixthCol = rows[i].cells[5].textContent.toUpperCase();
+                var seventhCol = rows[i].cells[6].textContent.toUpperCase();
+                if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1 || fourthCol.indexOf(filter) > -1 || fifthCol.indexOf(filter) > -1 || sixthCol.indexOf(filter) > -1 || seventhCol.indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+        document.querySelector('#searchInput').addEventListener('keyup', filterTable, false);
+    </script>
+
+    <script>
+        function filterTableB(event) {
+            var filter = event.target.value.toUpperCase();
+            var rows = document.querySelector("#mainTableB tbody").rows;
+
+            for (var i = 0; i < rows.length; i++) {
+                var firstCol = rows[i].cells[0].textContent.toUpperCase();
+                var secondCol = rows[i].cells[1].textContent.toUpperCase();
+                var thirdCol = rows[i].cells[1].textContent.toUpperCase();
+                if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+        document.querySelector('#searchInputB').addEventListener('keyup', filterTable, false);
+    </script>
 
 <?php include("views/templates/footer.php");?>
