@@ -7,7 +7,9 @@
         <li class="nav-item">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bedrijven</a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="index.php?page=logOut">Log out</a>
+        </li>
     </ul>
 
     <div class="tab-content" id="myTabContent">
@@ -87,7 +89,7 @@
             <a href="index.php?page=createBedrijf&table=bedrijven" class="btn btn-success" type="button">Voeg een nieuw bedrijf toe</a>
         </div>
     </div>
-    <a class="btn btn-succes" href="index.php?page=logOut" role="button" style="float: right">Log out</a>
+    
     <script>
         function filterTable(event) {
             var filter = event.target.value.toUpperCase();
