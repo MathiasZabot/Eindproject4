@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
 
-                    <?php echo $numOfRows; if($numOfRows > 0): ?>
+                    <?php if($numOfRows > 0): ?>
 
                         <?php foreach($result as $row) : ?>
                             <tr>
@@ -69,7 +69,7 @@
                 </thead>
                 <tbody>
 
-                <?php echo $numOfRows; if($numOfRows > 0): ?>
+                <?php if($numOfRows > 0): ?>
 
                     <?php foreach($resultBedrijven as $row) : ?>
                         <tr>
