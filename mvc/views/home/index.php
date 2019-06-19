@@ -107,10 +107,6 @@
             }
         }
 
-        document.querySelector('#searchInput').addEventListener('keyup', filterTable, false);
-    </script>
-
-    <script>
         function filterTableB(event) {
             var filter = event.target.value.toUpperCase();
             var rows = document.querySelector("#mainTableB tbody").rows;
@@ -126,7 +122,9 @@
                 }
             }
         }
-        document.querySelector('#searchInputB').addEventListener('keyup', filterTable, false);
+        
+        document.querySelector('#searchInput').addEventListener('keyup', filterTable, false);
+        document.querySelector('#searchInputB').addEventListener('keyup', filterTableB, false);
     </script>
 
 <?php include("views/templates/footer.php");?>
