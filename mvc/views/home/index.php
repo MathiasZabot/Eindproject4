@@ -122,7 +122,7 @@
                 }
             }
         }
-        
+
         document.querySelector('#searchInput').addEventListener('keyup', filterTable, false);
         document.querySelector('#searchInputB').addEventListener('keyup', filterTableB, false);
     </script>
