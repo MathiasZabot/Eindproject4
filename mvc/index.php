@@ -73,11 +73,18 @@ if ($request === "loginattempt" && !isset($_COOKIE["authentication"])){
             $deleteController->delete($_GET['table']);
             $homecontroller->index();
             break;
+        case "logOut":
+            setcookie("authentication",null,-1,"/");
+            $logincontroller->index();
+            break;
         default:
             $homecontroller = new home_Controller();
             $homecontroller->index();
             break;
     }
+}elseif(isset($_COOKIE["authentication"])){
+    $homecontroller = new home_Controller();
+    $homecontroller->index();
 }else{
     setcookie("authentication",null,-1,"/");
     $logincontroller->index();
